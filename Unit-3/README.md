@@ -104,17 +104,70 @@ public class LamndaExpression{
 
 
 ### ➡️ Static Method
+- A static method in Java is a method that belong to the class itself rather that to an instance of the class.
+- This means that static method can be called without creating an instance of the class.
+- Static methods are often used for the utility functions such as mathematicall operations or converting between data types.
+- They can also be used to access the static variable that belong to the class itself rather than the instance of the class.
+
+#### Example
+```java
+public static int add(int a, int b){
+    return a+b;
+}
+```
+#### Code
+```java
+public class StaticClass{
+  
+  // Static Method
+  public static void StaticMethod(){
+    System.out.println("Static Method");
+  }
+
+  // Non Static Method
+  public void NonStaticMethod(){
+    System.out.println("Non Static Method");
+  }
+
+  // Main Method
+  public static void main(String[] args){
+    
+    // Calling of Static method within same class
+    StaticMethod();
+
+    // creating instance of MyClass in same class in main function
+    StaticClass new_instance = new StaticClass();
+    new_instance.NonStaticMethod();
+  }
+  
+}
+```
+- Only Static data can be access by the Static Class.
+
+#### Benefits -
+1. Efficiency
+2. Modularity
+3. Reusability
+
+#### Uses -
+1. Mathematical Operations
+2. Data Conversion
+3. Utility Function
+
 
 ---
 
 
 ### ➡️ Base64 Encode and Decode
 
+
 ---
 
 
 ### ➡️ ForEach Method
 
+
+---
 
 
 ### ➡️ Try-with resources
