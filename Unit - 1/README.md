@@ -3,7 +3,7 @@
 
 
 
-## Functional Interfaces 🚀
+### ➡️ Functional Interfaces
 - A Functional Interface is an interface that contains only 1 abstract method.
 - It can have any numnber of default, static method but only 1 number abstract method.
 - Functional Interface are also called Single Abtract Method Interface or SAM Interface.
@@ -30,8 +30,10 @@ public static void main(String[] args){
 ```
 
 
+---
 
-## Lambda Expression 🚀
+
+### ➡️ Lambda Expression
 - In java, Lambda expression is an way to define anonymous function or method that can be passed around a value.
   ``` ( Anonymous Function - Function without any name. )```
 - It allow you to write code in more concise and flexible way and easier to read.
@@ -82,16 +84,40 @@ public class LamndaExpression{
 1
 ```
 
-## Method References 🚀
-## Stream API 🚀
-## Default Methods 🚀
-## Static Method 🚀
-## Base64 Encode and Decode 🚀
-## ForEach Method 🚀
+
+---
+
+
+### ➡️ Method References
+
+---
+
+
+### ➡️ Stream API
+
+---
+
+
+### ➡️ Default Methods
+
+---
+
+
+### ➡️ Static Method
+
+---
+
+
+### ➡️ Base64 Encode and Decode
+
+---
+
+
+### ➡️ ForEach Method
 
 
 
-## Try-with resources 🚀
+### ➡️ Try-with resources
 - `Try-with-resource` is a try statement that declares one or more resources.
 - Resouces is an object that must be closed after finishing the program.
 - The try-with-resouce statement ensure that each resouce is closed at the end of the statement execution. (means when the resoures must be closed when the code exection from the try block is finished)
@@ -120,14 +146,80 @@ public class MyClass{
 - So in this example, closing of resource is done by try itself.
 
 
+---
 
-## Type Annotations 🚀
-## Repeating Annotations 🚀
-## Java Module System 🚀
-## Diamond Syntax with Inner Anonymous Class 🚀
-## Local Variable Type Inference 🚀
-## Switch Expressions 🚀
-## Yield Keyword 🚀
-## Text Blocks 🚀
-## Records 🚀
-## Sealed Classes 
+
+### ➡️ Type Annotations
+
+---
+
+
+### ➡️ Repeating Annotations
+
+
+---
+
+
+### ➡️ Java Module System
+
+
+---
+
+
+### ➡️ Diamond Syntax with Inner Anonymous Class
+
+
+---
+
+
+### ➡️ Local Variable Type Inference
+- Local variable type inference is a feature in Java that allows developers to declare local variables without specifying the type.
+- The compiler will infer the type of the variable based on the initializer.
+- This can make code more concise and easier to read.
+- Here are the rules for local variable type inference:
+  1. The variable must be declared with the var keyword.
+  2. The variable must be initialized.
+  3. The type of the initializer must be unambiguous.
+
+#### Valid Code -
+```java
+var name = "John Doe";
+```
+- The compiler will infer that the type of the variable name is String. This is because the initializer is a string literal.
+
+#### Invalid Code -
+```java
+var name;
+```
+- This is because the initializer is missing. The compiler cannot infer the type of the variable without an initializer.
+> Local variable type inference is a powerful feature that can make Java code more concise and easier to read. However, it is important to use it correctly.
+
+
+---
+
+
+### ➡️ Switch Expressions
+
+
+---
+
+
+### ➡️ Yield Keyword
+
+---
+
+
+### ➡️ Text Blocks
+
+
+---
+
+
+### ➡️ Records
+
+
+---
+
+
+### ➡️ Sealed Classes 
+
