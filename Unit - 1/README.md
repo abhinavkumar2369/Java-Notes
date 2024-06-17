@@ -211,6 +211,38 @@ var name;
 
 ### ➡️ Text Blocks
 
+- Introduced in Java 15, text blocks provide a cleaner and more readable way to define multi-line string literals compared to traditional string concatenation. Here's a breakdown of text blocks in Java:
+
+#### Benefits:
+1. **Reduced verbosity** : No more need for explicit new line characters (\n) or concatenation operators (+) for each line.
+2. **Simplified escaping**: Text blocks handle most characters directly, eliminating the need for frequent escaping within the string.
+
+#### Syntax:
+A text block starts with three double quotation marks (""") followed by optional whitespaces and a newline character. The closing also uses three double quotes (""").
+
+Here's an example comparing traditional string concatenation with a text block:
+
+```java
+// Traditional String Concatenation
+String message = "This is a \n" +
+               "multiline string \n" +
+               "created with concatenation.";
+
+// Text Block
+String message = """
+This is a 
+multiline string 
+created with a text block.
+""";
+```
+
+#### Indentation handling:
+Text blocks preserve indentation within the block. However, the leading indentation on all lines is considered part of the block's formatting and is stripped by the compiler. This ensures proper alignment within your code.
+
+#### Escaping within text blocks:
+- While text blocks handle most characters directly, you can still use escaping for special cases like including literal quotation marks within the string. Use a backslash (\) before the character to be interpreted literally.
+- Additionally, text blocks support a new escape sequence \s to include whitespace characters that might otherwise be stripped during indentation handling.
+
 
 ---
 
@@ -222,4 +254,74 @@ var name;
 
 
 ### ➡️ Sealed Classes 
+- A sealed class in Java is a class that can only be extended by a limited set of classes. This is in contrast to a non-sealed class, which can be extended by any class.
+- Sealed classes were introduced in Java 15, and they provide a number of benefits, including:
+#### 1. Improved predictability:
+Sealed classes make it clear which classes are allowed to extend them, which can help to prevent errors and improve code readability.
+#### 2. Increased security:
+Sealed classes can be used to restrict access to sensitive classes, which can help to improve the security of an application.
+#### 3. Enhanced performance:
+Sealed classes can be used to optimize the performance of an application by reducing the number of classes that need to be loaded and processed.
 
+- To create a sealed class, you use the `sealed` keyword. You can then specify a list of permitted subclasses using the permits keyword.   
+- **For example**, the following code shows a sealed class called Shape that can only be extended by the Circle, Square, and Triangle classes:
+```java
+public sealed class Shape permits Circle, Square, Triangle {
+  // Class definition
+}
+```
+> Any attempt to extend the `Shape` **class** from a class that is not listed in the `permits` clause will result in a **compile-time error**.
+
+Sealed classes can also be used to seal interfaces. This means that only the classes listed in the permits clause can implement the interface. For example, the following code shows a sealed interface called Drawable that can only be implemented by the Circle, Square, and Triangle classes:
+
+```java
+public sealed interface Drawable permits Circle, Square, Triangle {
+  // Interface definition
+}
+```
+
+#### Program - 
+```java
+// Sealed Class
+sealed class Abhinav permits Abhilesh, Patel{
+    public void sayHello(){
+        System.out.println("Hello");
+    }
+}
+
+
+// Non Sealed Class
+non-sealed class Abhilesh extends Abhinav{
+    @Override
+    public void sayHello(){
+        System.out.println("Bye");
+    }
+}
+
+
+// Non Sealed Class
+non-sealed class Patel extends Abhinav{
+    @Override
+    public void sayHello(){
+        System.out.println("Bye");
+    }
+}
+
+
+public class SealedClasses {
+    public static void main(String[] args) {
+
+        // Creating Instance of sealed class
+        Abhinav abhinav = new Abhinav();
+        abhinav.sayHello();
+
+        // Overriding sealed class with permits
+        Abhilesh abhilesh = new Abhilesh();
+        abhilesh.sayHello();
+
+        Patel patel = new Patel();
+        patel.sayHello();
+    }
+}
+
+```
