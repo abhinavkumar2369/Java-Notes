@@ -1,4 +1,4 @@
-## Array List
+## Array List 🚀
 - Dynamic Array
 
   ArrayList is a resizable array, which means it can grow and shrink in size automatically as you add or remove elements.
@@ -47,7 +47,7 @@ public class Main {
 
 ```
 
-## Linked List
+## Linked List 🚀
 
 - Linked list is a linear data structure where data are not stored sequentially inside the computer memory but they are link with each other by the address.
 
@@ -120,4 +120,48 @@ Ideal for scenarios where elements are frequently added or removed, and random a
 
 
 
-## Vector
+## Vector 🚀 
+- **Thread-Safe Dynamic Array**: Vector is similar to ArrayList but with synchronized methods, making it thread-safe for use in concurrent programming.
+- Use Vector when you need a thread-safe, dynamic array and your application requires synchronized access to the elements.
+- Ideal for scenarios where multiple threads will access the list and you need to ensure data consistency.
+  
+### ➡️ Key Characteristics
+- Synchronized: All methods are synchronized, making it safe for use by multiple threads at the cost of additional overhead.
+- Dynamic Size: Like ArrayList, Vector can grow and shrink in size automatically.
+- Fast Access: Accessing elements by their index (e.g., vector.get(index)) is very fast, with a time complexity of O(1).
+### ➡️ Operations
+- Adding Elements: add(element), add(index, element), addElement(element).
+- Removing Elements: remove(index), remove(element), removeElement(element).
+- Modifying Elements: set(index, element) .
+- Retrieving Elements: get(index).
+
+
+```java
+import java.util.Vector;
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating a Vector
+        Vector<String> fruits = new Vector<>();
+
+        // Adding elements
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Cherry");
+
+        // Accessing elements
+        System.out.println(fruits.get(0)); // Output: Apple
+
+        // Modifying elements
+        fruits.set(1, "Blueberry");
+
+        // Removing elements
+        fruits.remove(0);
+
+        // Iterating through the vector
+        for (String fruit : fruits) {
+            System.out.println(fruit);
+        }
+    }
+}
+```
